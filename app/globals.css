@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: dark; }
+
+html, body { height: 100%; }
+
+body {
+  background-color: #05070d;
+  background-image:
+    radial-gradient(1200px 500px at 85% -10%, rgba(34, 211, 238, 0.10), transparent 60%),
+    radial-gradient(900px 500px at -10% 110%, rgba(52, 211, 153, 0.07), transparent 60%),
+    linear-gradient(rgba(148, 163, 184, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.045) 1px, transparent 1px);
+  background-size: auto, auto, 36px 36px, 36px 36px;
+  color: #e2e8f0;
+}
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-thumb { background: #1b2638; border-radius: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+
+@layer components {
+  .card { @apply rounded-xl border border-edge bg-panel/80 backdrop-blur; }
+  .label { @apply text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-500; }
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-lg px-3.5 py-2 text-sm font-semibold transition disabled:cursor-not-allowed disabled:opacity-40; }
+  .btn-primary { @apply btn bg-cyan-400 text-slate-950 hover:bg-cyan-300; }
+  .btn-ghost { @apply btn border border-edge bg-white/5 text-slate-200 hover:bg-white/10; }
+  .input { @apply w-full rounded-lg border border-edge bg-black/40 px-3 py-2 text-sm text-slate-100 placeholder:text-slate-600 outline-none focus:border-cyan-400/60; }
+}
